@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <wchar.h>
-
+#include <cstdlib>
 #include <ASMMacros.h>
 // contains functions that are part of the C runtime library and have been declared ingame
 // just declaring them so we don't need to include our own duplicates
@@ -184,6 +184,9 @@ public:
 		[[noreturn]] static void __cdecl exit(int Code)
 			{ JMP_STD(0x7CBDDC); }
 
-		_onexit_t __cdecl onexit(_onexit_t Func)
+		static _onexit_t __cdecl onexit(_onexit_t Func)
 			{ JMP_STD(0x7C970C); }
+
+		static FILE* __cdecl _fsopen(const char* FileName, const char* Mode, int ShFlag)
+			{ JMP_STD(0x7CA814); }
 };

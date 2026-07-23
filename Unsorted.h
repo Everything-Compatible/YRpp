@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <ArrayClasses.h>
 #include <GeneralDefinitions.h>
@@ -39,6 +39,8 @@ public:
 
 	DEFINE_REFERENCE(HWND, hWnd, 0xB73550u)
 	DEFINE_REFERENCE(HINSTANCE, hInstance, 0xB732F0u)
+	DEFINE_REFERENCE(DWORD, MainThreadId, 0xB730E8u)
+	DEFINE_REFERENCE(HANDLE, GameInstanceMutex, 0xB0BCE4u)
 	DEFINE_REFERENCE(HIMC, hIMC, 0xB7355Cu)
 	
 	DEFINE_REFERENCE(bool, bVPLRead, 0x887418u)
