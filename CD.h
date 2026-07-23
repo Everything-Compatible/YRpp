@@ -1,6 +1,7 @@
-#pragma once
+﻿#pragma once
 
 #include <YRPPCore.h>
+#include <Helpers/VTable.h>
 
 class CDDriveManagerClass
 {
@@ -38,12 +39,16 @@ class CD
 public:
 	virtual bool ForceAvailable(int nCDNumber) R0;
 	virtual bool InsertCDDialog() R0;
-	virtual void SwapToDisk() R0;
+	virtual void SwapToDisk() RX;
 
 public:
 
 	DWORD unknown_04;
 
+	CD() : unknown_04(0)
+	{
+		VTable::Set(this, 0x7E4C30);
+	}
+
 protected:
-	CD() RX;
 };
